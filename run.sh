@@ -8,6 +8,7 @@ Target=$2
 FULL_GREETING="${Greeting} ${Target}. My name is ${_tapisJobOwner}"
 echo "$FULL_GREETING"
 echo `pwd`
+echo  ${_tapisJobWorkingDir}
 
 fileToModify=$_tapisExecSystemInputDir/in.txt
 
