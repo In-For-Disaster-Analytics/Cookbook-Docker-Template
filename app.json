@@ -7,7 +7,7 @@
   "runtime": "SINGULARITY",
   "runtimeVersion": null,
   "runtimeOptions": ["SINGULARITY_RUN"],
-  "containerImage": "docker://ghcr.io/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME:latest",
+  "containerImage": "docker://ghcr.io/in-for-disaster-analytics/cookbook-template-simple:sha-fb59e5f",
   "jobType": "BATCH",
   "maxJobs": -1,
   "maxJobsPerUser": -1,
@@ -98,6 +98,6 @@
     "isInteractive": false,
     "icon": "jupyter",
     "category": "Data Processing",
-    "queueFilter": ["gpu-a100-small", "gpu-a100", "gpu-a100-dev"]
+    "queueFilter": ["development", "normal"]
   }
 }
