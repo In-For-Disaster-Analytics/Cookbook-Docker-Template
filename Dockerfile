@@ -1,9 +1,7 @@
-FROM mambaorg/micromamba:1.5.8
-COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yaml /tmp/env.yaml
-RUN micromamba install -y -n base -f /tmp/env.yaml && \
-    micromamba clean --all --yes
-USER mambauser
-COPY --chmod=755 run.sh /tapis/run.sh
-COPY --chown=$MAMBA_USER:$MAMBA_USER main.py .
-ENV PATH="/opt/conda/bin:${PATH}"
-ENTRYPOINT [ "/tapis/run.sh" ]
+FROM debian:bullseye-slim
+
+COPY run.sh /bin/run.sh
+
+RUN chmod +x /bin/run.sh
+
+ENTRYPOINT [ "run.sh" ]

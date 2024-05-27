@@ -1,11 +1,15 @@
 #!/bin/bash
-# $1: input file
-# $2: output file
 
-if [ "$#" -ne 2 ]; then
-    echo "Usage: run.sh <input_file> <output_file>"
-    exit 1
-fi
+echo "Your command line args (appArgs) are: $@"
 
-# Run the main.py file with the input and output file
-python main.py ${1} ${2}
+Greeting=$1
+Target=$2
+
+FULL_GREETING="${Greeting} ${Target}. My name is ${_tapisJobOwner}"
+echo "$FULL_GREETING"
+echo `pwd`
+echo  ${_tapisJobWorkingDir}
+
+fileToModify=$_tapisExecSystemInputDir/in.txt
+
+echo $FULL_GREETING > $_tapisExecSystemOutputDir/out.txt
