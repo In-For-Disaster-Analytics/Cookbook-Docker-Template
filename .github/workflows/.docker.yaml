@@ -4,12 +4,7 @@ name: Create and publish a Docker image
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
-<<<<<<< HEAD
-    branches:
-      - "*"
-=======
     branches: "*"
->>>>>>> f2b6cb7 (fix: docker image obtained from github reponame)
     tags:
       - "*"
   pull_request:
@@ -17,11 +12,7 @@ on:
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
   REGISTRY: ghcr.io
-<<<<<<< HEAD
-  IMAGE_NAME: in-for-disaster-analytics/cookbook-docker-template #change {Template}
-=======
   IMAGE_NAME: ${{ github.repository }}
->>>>>>> f2b6cb7 (fix: docker image obtained from github reponame)
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
